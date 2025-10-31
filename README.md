@@ -1,5 +1,26 @@
 This is a toy project I've developed to learn the basics of language model training. My goal is to approach the process in an iterative manner and step-by-step improve the work.
 
+## V2
+**What's changed?**
+I did not change the hyper-parameters because I wanted to be able to compare the first two versions based on architectural features.
+
+- Introduced a config dict to hold all the hyper-parameters.
+- Changed the character-level tokenizer to a Byte Pair Encoding using HuggingFace tokenizer.
+- Changed the tokenizer logic so that encoding and decoding functions can take different tokenizers.
+- Changed the generation logic in the GPTLanguageModel class. Now it can take parameters like temperature and top_k.
+- Implemented a different learning rate scheduler with warmup and cosine decay
+- Added weight tying
+- Plotted not only cross entropy loss but also perplexity
+- Changed the decoder that generates text so that it is customizable with different prompts and temperatures
+
+The results seem better in a general sense:
+
+- Proper grammar and punctuation
+- Shakespearean style
+- Character names and context
+- Proper dialogue format
+- Stays on topic with royal/noble themes
+
 ## V1
 It trains a small Transformer (≈10.7M parameters) capable of generating text in Shakespearean style. It reproduces core components of modern language models such as:
 
