@@ -6,7 +6,7 @@ It trains a small Transformer (≈10.7M parameters) capable of generating text i
 - Multi-head self-attention
 - Layer normalization
 - Residual connections
-- Token and positional embeddings
+- Character tokenization and positional embeddings
 - The training corpus is input.txt (≈1.1M characters) from the Tiny Shakespeare dataset
 
 ## Architecture Summary
