@@ -1,0 +1,45 @@
+This is a toy project I've developed to learn the basics of language model training. My goal is to approach the process in an iterative manner and step-by-step improve the work.
+
+## V1
+It trains a small Transformer (≈10.7M parameters) capable of generating text in Shakespearean style. It reproduces core components of modern language models such as:
+
+- Multi-head self-attention
+- Layer normalization
+- Residual connections
+- Token and positional embeddings
+- The training corpus is input.txt (≈1.1M characters) from the Tiny Shakespeare dataset
+
+## Architecture Summary
+- Model Size: ~10.74M parameters
+- Context Window (block size): 128 characters
+- Embedding Dimension: 384
+- Attention Heads: 6
+- Transformer Layers: 6
+
+## Hyperparameters
+| Hyperparameter      | Value     |
+| ------------------- | --------- |
+| Batch size          | 32        |
+| Learning rate       | 3e-4      |
+| Dropout             | 0.2       |
+| Optimizer           | AdamW     |
+| Training iterations | 5000      |
+| Evaluation interval | 500 steps |
+| Context length      | 128       |
+
+## Results
+| Step | Train Loss | Val Loss |
+| ---- | ---------- | -------- |
+| 0    | 1.88       | 1.97     |
+| 1000 | 1.51       | 1.70     |
+| 2500 | 1.34       | 1.56     |
+| 4999 | **1.22**   | **1.50** |
+
+After 5000 iterations, the model can generate coherent pseudo-Shakespearean text, although there are grammatical errors:
+KING RICHARD III:
+Neither is another.
+
+QUEEN ELIZABETH:
+Here's sociatpy counts, boy a fellow is marriage,
+Make proaching in the friends, corrow right,
+Which trives this, it best, gallest, die...
